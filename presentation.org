@@ -1,0 +1,313 @@
+* Introduction to CS 211
+Dr. Mayssaa Al Najjar
+
+* Introduction to the Course
++ A continuation of program design and development
+  + Object-oriented Programming
+  + Data structures: stacks, queues, linked lists, and trees
+  + Pointers, recursion, and implementation
+  + Analysis of sorting and seaching algorithms
+
++ C++
+  - A powerful computer programming language
+  - Extension of C, developed by Bjarne Stroustrup in 1979 at Bell Laboratories
+  - Provides a number of features that "spruce up" the C language
+  - Provides capabilities for object-oriented programming
+
++ You'll learn object-oriented programming
+  + Today's key programming methodology that's enchancing programmer productivity, thereby reducing software-development costs
+
++ You'll create many software objects in the real world
+
+* C++
+| Procedural Programming                                                              | Object-Oriented Programming                                |
+|-------------------------------------------------------------------------------------+------------------------------------------------------------|
+| Focus is on the process                                                             | Focus is on objects (model real world objects              |
+| Top down design: break problem into sub problems                                    | Object contains data and procedures to manipulate data     |
+| Procedures/functions are written to process data                                    | Messages sent to objects to perform operations on its data |
+| Procedures contain own variables and commonly share variables with other procedures |                                                            |
+
+#+BEGIN_SRC ditaa :file images/hello-world.png
++--------------------+-------------------------+
+| Procedural Program | Object Oriented Program |
+|                    |                         |
+|                    |                         |
+|                    |                         |
++--------------------+-------------------------+
+#+END_SRC
+
+* Advantage of OOP
+- Software maintenance and reuse can be difficult and time consuming
+  - Data structure changes lead to function changes
+  - Changes in top procedure can cascade to sub-procedures and all procedures in pyramid
+  - Possibly more bugs
+
+- OOP is modular
+  - Easier to develop and debug
+  - Simpler to understand, modify and extend after development
+
+* C++ Standard Library
+- C++ programs consist of pieces called classes and functions
+- Most C++ programmers take advantage of the rich collections of classes and functions in the C++ Standard Library
+- Two parts to learning the C++ "world"
+  - The C++ language itself (the core language), and
+  - How to use the classes and functions in the C++ Standard Library
+
+* Next, we will start reviewing these topics
+- Program Structure
+- Arithmetic, Logical and Relational Operators
+- Selective (If else, switch...) and Iterative statements (loops)
+- Files
+- Functions (call by Reference vs. Value)
+- Scope of Variables
+- Arrays
+- Vectors
+- String Class
+- Structures
+
+* Review Part 1
+Chapters 2-6
+
+These slides are compiled from different sources, including Dr. Ahmad Hadaegh slides and Pearson Education, Inc., publishing as Addison-Wesley slides, and modified by Dr. Mayssaa Al Najjar
+
+* Topics
+- Program Steps
+- Variables
+- Cin/Cout Objects
+- Arithmetic, Logical and Relational Operators
+- Selective (If else, switch...) and Iterative Statements (loops)
+- Files
+- Functions (call by Reference vs. Value)
+- Scope of Variables
+
+* Input, Processing, and Output
+Three steps that a program typically performs
+1) *Gather input data*
+   + from keyboard
+   + from files on disk drives
+2) *Process the input data*
+3) *Display the results as output*
+   + send it to the screen
+   + write to a file
+
+* Variables
++ _Variable_: a storage location in memory
+  + Has a name and a type of data it can hold
+  + int
+  + double
+  + Char: holds characters or very small integer values, e.g. char letter = "C";
+  + string: holds series of characters in consecutive memory locations, e.g. string greet = "Hello"
+  + Bool: represents values that are true (1) or false (0) --- store as small integers
+
++ Must be defined before it can be used:
+=int item;=
+
+* Numeric data types
+** TODO add image
+
+* Constants
++ Variables whose content cannot be changed during program execution
++ For representing constant values with descriptive names
++ Often named in uppercase letters:
+  + =const double TAX_RATE = 0.0675;=
+
+* The =cin/cout= Objects
++ Standard input/output object
++ Require =iostream= file
++ Cin used to read input from keyboard
+  + Information retrieved from =cin= with =>>=
+  + Input is stored in one or more variables
+
++ Cout used to print output to screen
+  + Use the stream insertion operator =<<= to send output to cout
+    + =cout << "Programming is fun!\n";=
+
+* Working with Characters and =string= Objects
++ Using =cin= with the =>>= operator to input strings can cause problems:
+  + It passes over and ignores any leading /whitespace characters (spaces, tabs, or line breaks)/
++ To work around this problem, you can use C++ function named =getline=:
+
+=String name;= \\
+=getline(cin, name);=
+
+* Using =getline= in Program 3-19
+** TODO add image
+ 
+* Formatting Outputs: Stream Manipulators
++ Used to control how an output field and floating point numbers are displayed
++ Requires iomanip header file
+** TODO add image
+
+* Processing Data
+Chapters 3-5
+
+* Arithmetic Operators
+** TODO add image
+
+* Arithmetic Operators: Type Conversions
++ Operators are performed between operands of the same type
+  + If not of the same type, C++ will convert one to be the type of the other
+  + This can impact the results of calculations
++ When operating on values of different data types, the lower one is promoted to the type of the higher one
+  + Highest to lowest (Ranked by largest number they can hold): long double -> double -> float -> unsigned long -> long -> unsigned int -> int
++ When using the = operator, the type of expression on right will be converted to type of variable on left
+
+=int age = 20= \\
+=age = 25.6= \\
+=cout << age; -> 25 not 25.6=
+
+* Arithmetic Operators: Typecasting
++ Typecasting
+  + Used for manual data type conversion
+  + Useful for floating point division using ints:
+=double m= \\
+=m = static_cast<double>(y2-y1) /(x2-x1);=
+
+* Arithmetic Operators: Precedence
+** TODO add image
+
+* What is the value of y?
++ =Y=2*5*5+3*5+7=?
+
+* Prefix/Postfix Increment and Decrement
+** TODO add image
+
+* Relational and Logical Operators
++ _Relational_: compare numbers to determine relative order
+  - >    Greater than
+  - <    Less than
+  - >=   Greater than or equal to
+  - <=   Less than or equal to
+  - ==   Equal to
+  - !=   Not equal to
++ _Logical_: create relational expressions from relation ones
+
+| &&          | AND | New expression is true if both expressions are true                                         |
+| \vert \vert | OR  | New expression is true if either expression is true                                         |
+| !           | NOT | Reverse the value of an expression -- true expression becomes false, and false becomes true |
+
+* Program Execution
++ Sequential execution
+  + Unless directed otherwise, the computer executes C++ statements one after the other in the order in which they're written
++ Transfer of control
+  + Various C++ statements enable you to specify that the next statement to execute may be other than the next one in sequence
+    + the selection structure
+    + the iteration structure
+
+* Selection Statements
++ The if statement:
+  + single-selection statement
+  + selects or ignores a single action (or group of actions)
++ The if...else statement:
+  + double-selection statement
+  + selects between two different actions (or groups of actions)
++ The switch statement:
+  + multiple-selection statement
+  + selects among many different actions (or groups of actions)
+
+* =if/else=-statement
+#+BEGIN_EXAMPLE
+if (expression)
+   statement1;
+else
+   statement2;
+#+END_EXAMPLE
++ If the =expression= is =true=, then =statement1= is executed and =statement2= is skipped.
++ If the =expression= is =false=, then =statement1= is skipped and =statement2= is executed.
++ Input validation: inspecting input data to determine whether it is acceptable
++ May have several nested if/else statements to test multiple conditions
+
+* =switch= Statement
+#+BEGIN_EXAMPLE
+switch (expression) // integer
+{
+  case exp1: statement1;
+  case exp2: statement2;
+  ...
+  case expn: statementn;
+  default:   statementn+1;
+}
+#+END_EXAMPLE
+
++ --+
+
+| Remember the break      |
+| statement in each case! |
+
++ =switch= is a natural choice for menu-driven program
+
+* Iteration Statements
++ The while loop is a conditional pretest loop
+  + Iterates as long as a certain condition exits
+  + Validating input
+  + Reading lists of data terminated by a sentinel
++ The do-while loop is a conditional posttest loop
+  + Always iterate at least once
+  + Repeating a menu
++ The for loop is a pretest loop
+  + Built-in expressions for initializing, testing, and updating
+  + Situations where the exact number of iterations is known
+
+* The =while= Loop
+#+BEGIN_EXAMPLE
+while (expression)
+       statement;
+#+END_EXAMPLE
+=expression= is evaluated
++ if =true=, then =statement= is executed, =expression= is evaluated again
++ if =false=, the loop is finished and program statement following =statement= execute
+
+** TODO add image
+
+* Counters
++ _Counter_: a variable that is incremented of decremented each time a loop repeats
++ Can be used to control execution of the loop (also known as the _loop control variable_)
++ Must be initialized before entering loop
+
+* The =do-while= Loop
++ Posttest-loop -- execute the loop, then test the =expression=
+  - Execute at least once
+  - Useful in menu-driven programs
++ General Format:
+#+BEGIN_EXAMPLE
+do
+  statement; // or block in { }
+while (expression);
+#+END_EXAMPLE
+
++ Note that a semicolon is required after (=expression=)
+
+* Sentinels
++ _sentinel_: value in a list of values that indicates end of data
++ Special value that cannot be confused with a valid value, /e.g./, =-999= for a test score
++ Used to terminate input when user may not know how many values will be entered
+
+* A Sentinel in Program 5-13
+** TODO add image
+** TODO add image
+
+* =for= Loop
+#+BEGIN_EXAMPLE
+for(initialization; test; update)
+  statement; // or block in { }
+#+END_EXAMPLE
+1. Perform =initialization=
+2. Evaluate =test= expression
+   + If =true=, execute =statement=
+   + If =false=, terminate loop execution
+3. Execute =update=, then re-evaluate =test= expression
+
+* A Closer Look at the Loop
+** TODO add image
+
+* Nested Loops
++ A _nested loop_ is a loop inside the body of another loop
++ _Inner_(inside), _outer_(outside) loops:
+#+BEGIN_EXAMPLE
+for (int row=1; row<=3; row++) // outer
+  for (int col=1; col<=3; col++) // inner
+    cout << row * col << endl;
+#+END_EXAMPLE
+
+* Files
+Chapter 5
