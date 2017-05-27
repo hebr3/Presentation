@@ -1,3 +1,22 @@
+#+TITLE: CS 211
+#+AUTHER: Henry Brooks
+#+EMAIL: brook057@cougars.csusm.edu
+#+DATE: 2017-05-26 Fri
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE: en
+#+OPTIONS: H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+
 * Introduction to CS 211
 Dr. Mayssaa Al Najjar
 
@@ -311,3 +330,11 @@ for (int row=1; row<=3; row++) // outer
 
 * Files
 Chapter 5
+
+\[
+e^{e\pi} = -1
+\]
+
+\[
+\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+\]  
