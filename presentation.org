@@ -17,6 +17,10 @@
 #+LaTeX_CLASS: beamer
 #+LaTeX_CLASS_OPTIONS: [bigger]
 
+#+BEAMER_FRAME_LEVEL: 2
+
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+
 * Introduction to CS 211
 Dr. Mayssaa Al Najjar
 
@@ -334,7 +338,6 @@ Chapter 5
 \[
 e^{e\pi} = -1
 \]
-
 \[
 \int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
 \]  
